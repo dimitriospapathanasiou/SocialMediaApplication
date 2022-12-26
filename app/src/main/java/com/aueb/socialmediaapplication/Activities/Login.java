@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.aueb.socialmediaapplication.Database.PseudoDatabase;
 import com.aueb.socialmediaapplication.Database.UserDatabase;
 import com.aueb.socialmediaapplication.R;
 import com.aueb.socialmediaapplication.Util.AndroidUtil;
@@ -21,7 +22,7 @@ public class Login extends AppCompatActivity implements LoginInterface{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.layout_activity_login);
-        UserDatabase userDb = new UserDatabase(); // get users' credentials from database
+        UserDatabase userDb = PseudoDatabase.fillWithUsers();
 
         presenter = new LoginChecks(this, userDb);
 
@@ -45,12 +46,6 @@ public class Login extends AppCompatActivity implements LoginInterface{
     }
 
     @Override
-    public void successfulLogin() {
-        startActivity(new Intent(Login.this, Menu.class));
-        finish();
-    }
-
-    @Override
     public void createAnAccount() {
         startActivity(new Intent(Login.this, Register.class));
     }
@@ -58,12 +53,12 @@ public class Login extends AppCompatActivity implements LoginInterface{
 
     @Override
     public String getUsername() {
-        return binding.emailEt.getText().toString();
+        return binding.usernameEt.getText().toString();
     }
 
     @Override
     public void setUsername(String username) {
-        binding.emailEt.setText(username);
+        binding.usernameEt.setText(username);
     }
 
     @Override
@@ -109,8 +104,10 @@ public class Login extends AppCompatActivity implements LoginInterface{
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Login.this, Menu.class));
-                finish();
+                Intent intent = new Intent(Login.this, Menu.class);
+                intent.putExtra("username",getUsername());
+                intent.putExtra("password",getPassword());
+                startActivity(intent);
             }
         };
         AndroidUtil.showDialog(this,

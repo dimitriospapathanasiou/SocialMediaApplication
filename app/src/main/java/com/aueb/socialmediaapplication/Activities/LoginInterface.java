@@ -1,7 +1,6 @@
 package com.aueb.socialmediaapplication.Activities;
 
 interface LoginInterface {
-    void successfulLogin();
 
     void createAnAccount();
 

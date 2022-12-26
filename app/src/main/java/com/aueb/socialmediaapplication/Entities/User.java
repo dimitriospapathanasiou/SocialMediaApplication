@@ -1,35 +1,32 @@
 package com.aueb.socialmediaapplication.Entities;
 
 import com.aueb.socialmediaapplication.Activities.InputException;
-import com.aueb.socialmediaapplication.Activities.InputUtil;
+import com.aueb.socialmediaapplication.Util.InputUtil;
 
 import java.util.ArrayList;
 
 public class User {
 
     private int id;
-    private  String username;
+    private String username;
     private String email;
     private String password;
-    private ArrayList<Message> messages = new ArrayList<Message>();
+    private ArrayList<Message> messagesSent = new ArrayList<Message>();
+    private ArrayList<Message> messagesReceived = new ArrayList<Message>();
 
-    public User(){
+
+    public User() {
 
     }
 
-    public User(String username, String email, String password){
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
     }
 
-    public String getUsername(){
 
-        return username;
-    }
-
-    public void setUsername(String name) throws InputException{
-        if (name.isEmpty()){
+    public void setUsername(String name) throws InputException {
+        if (name.isEmpty()) {
             throw new InputException("Invalid username");
         }
         username = name;
@@ -39,7 +36,7 @@ public class User {
         return email;
     }
 
-    public void setMail(String email) throws InputException{
+    public void setMail(String email) throws InputException {
         if (email.isEmpty()) {
             throw new InputException("Invalid email");
         }
@@ -49,11 +46,11 @@ public class User {
         this.email = email;
     }
 
-    public String getUserName(){
+    public String getUserName() {
         return username;
     }
 
-    public void setUserName(String name) throws InputException{
+    public void setUserName(String name) throws InputException {
         if (name.isEmpty()) {
             throw new InputException("Invalid name");
         }
@@ -64,21 +61,41 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) throws InputException{
+    public void setPassword(String password) throws InputException {
         if (password.isEmpty()) {
             throw new InputException("Invalid password");
         }
         this.password = password;
     }
 
+    public String getLastMessage() {
+        ArrayList<Message> messagesReceived = getMessagesReceived();
+        ArrayList<Message> messagesSent = getMessagesSent();
+        if (messagesReceived.isEmpty()) {
+            int lastSent = messagesSent.size() - 1;
+            Message messageLastSent = messagesSent.get(lastSent);
+            return messageLastSent.getMessageText();
+        }
+        else if (messagesSent.isEmpty()){
+            int lastReceived = messagesReceived.size() - 1;
+            Message messageLastReceived = messagesReceived.get(lastReceived);
+            return messageLastReceived.getMessageText();
+        }
+        else {
+            int lastReceived = messagesReceived.size() - 1;
+            int lastSent = messagesSent.size() - 1;
 
-    public ArrayList<Message> getAllMessages() {
-        return messages;
+                Message messageLastSent = messagesSent.get(lastSent);
+                Message messageLastReceived = messagesReceived.get(lastReceived);
+                if (messageLastSent.getId() < messageLastReceived.getId()) {
+                    return messageLastReceived.getMessageText();
+                } else {
+                    return messageLastSent.getMessageText();
+                }
+        }
     }
 
-    public void setMessages(ArrayList<Message> ms){
-        messages = ms;
-    }
+
 
     public int getUserId() {
         return id;
@@ -88,4 +105,19 @@ public class User {
         this.id = id;
     }
 
+    public ArrayList<Message> getMessagesSent() {
+        return messagesSent;
+    }
+
+    public void setMessagesSent(ArrayList<Message> messagesSent) {
+        this.messagesSent = messagesSent;
+    }
+
+    public ArrayList<Message> getMessagesReceived() {
+        return messagesReceived;
+    }
+
+    public void setMessagesReceived(ArrayList<Message> messagesReceived) {
+        this.messagesReceived = messagesReceived;
+    }
 }

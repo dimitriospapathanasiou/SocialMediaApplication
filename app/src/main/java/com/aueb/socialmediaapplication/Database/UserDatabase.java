@@ -7,13 +7,13 @@ import java.util.List;
 
 public class UserDatabase {
 
-    protected static List<User> usersList = new ArrayList<>();
+    protected static ArrayList<User> usersList = new ArrayList<>();
     private static int userIdCounter = 0;
 
 
-    public static User getUserFromCredentials(String email, String password) {
+    public static User getUserFromCredentials(String username, String password) {
         for (User user : usersList) {
-            if (user.getMail().equalsIgnoreCase(email) && user.getPassword().equalsIgnoreCase(password)) {
+            if (user.getUserName().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(password)) {
                 return user;
             }
         }
@@ -47,6 +47,10 @@ public class UserDatabase {
     public int nextId() {
         userIdCounter++;
         return userIdCounter;
+    }
+
+    public ArrayList<User> getAllUsers(){
+        return usersList;
     }
 
 }

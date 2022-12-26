@@ -1,4 +1,4 @@
-package com.aueb.socialmediaapplication.Activities;
+package com.aueb.socialmediaapplication.Util;
 
 public class InputUtil {
 
