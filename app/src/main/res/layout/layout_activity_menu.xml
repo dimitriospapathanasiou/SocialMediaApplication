@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.Menu"
+        android:background="@drawable/gradient" >
+
+        <ImageButton
+            android:id="@+id/btnLogOut"
+            android:layout_width="106dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="18dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:src="@drawable/ic_logout"
+            android:textColor="@color/white"
+            android:contentDescription="LOGOUT" />
+
+        <Button
+            android:id="@+id/btnViewMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:layout_centerInParent="true"
+            android:text="View Messages"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</layout>
