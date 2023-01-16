@@ -1,0 +1,8 @@
+1,theogeorgantas,georpentaris,Hi georpentaris!,0,1,
+2,georpentaris,theogeorgantas,Hi theogeorgantas! What's up?,0,1,
+3,theogeorgantas,georpentaris,Good! What about you?,0,1,
+4,theogeorgantas,dimipapathanasiou,Hello There!,0,1,
+5,dimipapathanasiou,theogeorgantas,General Kenobi,1,1,
+6,argyro.sk,cynthia_k,Our app is working!,1,1,
+7,cynthia_k,argyro.sk,HAHAHAHAHAHA,0,1,
+8,theogeorgantas,athina_kfl,Hi!,0,1,
