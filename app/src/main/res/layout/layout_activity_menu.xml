@@ -7,35 +7,47 @@
 
     </data>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Activities.Menu"
-        android:background="@drawable/gradient" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Menu"
+    android:background="@drawable/gradient" >
 
-        <ImageButton
-            android:id="@+id/btnLogOut"
-            android:layout_width="106dp"
-            android:layout_height="45dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="18dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="20dp"
-            android:src="@drawable/ic_logout"
-            android:textColor="@color/white"
-            android:contentDescription="LOGOUT" />
+    <TextView
+        android:id="@+id/db"
+        android:layout_width="395dp"
+        android:layout_height="668dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnViewMessages"
-            android:layout_width="wrap_content"
-            android:layout_height="74dp"
-            android:layout_centerInParent="true"
-            android:text="View Messages"
-            android:textColor="@color/white" />
+    <ImageButton
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        android:contentDescription="LOGOUT"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_logout"
+        android:textColor="@color/white" />
 
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btnViewMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_centerInParent="true"
+        android:text="View Messages"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
 </layout>

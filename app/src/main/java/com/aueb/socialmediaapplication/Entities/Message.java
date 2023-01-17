@@ -6,12 +6,16 @@ public class Message {
     private String sender;
     private String receiver;
     private int id;
+    private int like;
+    private int status;
 
-    public Message(String messageText, String sender, String receiver, int id){
+    public Message(int id, String sender, String receiver, String messageText, int like, int status){
         this.messageText = messageText;
         this.sender = sender;
         this.receiver = receiver;
+        this.like = like;
         this.id = id;
+        this.status = status;
     }
 
     public String getReceiver() {
@@ -44,5 +48,21 @@ public class Message {
 
     public void setMessageText(String messageText) {
         this.messageText = messageText;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

@@ -1,0 +1,4 @@
+0000,User_ID,Text,DateTime,Image
+0001,0001,Hello Everyone! Welcome to Grasp!t,2022-12-31 19:40:44,null
+0002,0002,Just arrived in Vilnius!,2022-12-31 19:42:15,null
+0003,0006,Louis is coming to Athens!,2022-12-31 19:42:58,null

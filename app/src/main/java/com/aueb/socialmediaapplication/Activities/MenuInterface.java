@@ -4,4 +4,3 @@ public interface MenuInterface {
     void logOut();
     void viewMessage();
 }
-

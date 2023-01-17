@@ -3,6 +3,7 @@ package com.aueb.socialmediaapplication.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -22,7 +23,8 @@ public class Login extends AppCompatActivity implements LoginInterface{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.layout_activity_login);
-        UserDatabase userDb = PseudoDatabase.fillWithUsers();
+        ShowUsers.readFromInternalFile(getApplicationContext());
+        UserDatabase userDb = ShowUsers.fillWithUsers();
 
         presenter = new LoginChecks(this, userDb);
 

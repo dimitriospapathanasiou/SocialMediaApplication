@@ -8,13 +8,14 @@ public class LoginChecks {
     LoginInterface view;
     UserDatabase userDAO;
 
-
+    //Initialisation of main variables
     public LoginChecks(LoginInterface view, UserDatabase userDAO) {
         this.view = view;
         this.userDAO = userDAO;
     }
 
-    void onLogin() {
+    //Making the necessary checks for a successful login
+    public void onLogin() {
         if (view.getUsername().isEmpty() || view.getPassword().isEmpty()) {
             view.emptyFields();
             return;

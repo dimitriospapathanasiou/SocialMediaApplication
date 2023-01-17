@@ -3,11 +3,13 @@ package com.aueb.socialmediaapplication.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.aueb.socialmediaapplication.Database.PseudoDatabase;
 import com.aueb.socialmediaapplication.R;
 import com.aueb.socialmediaapplication.databinding.LayoutActivityMenuBinding;
 
